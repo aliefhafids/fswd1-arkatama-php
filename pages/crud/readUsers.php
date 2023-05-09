@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $query);
             <th>ID</th>
             <th>Action</th>
             <th>Avatar</th>
-            <th>Nama</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Role</th>
@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_assoc($result)) : //mysqli_fetch_assoc
                 <td><?= $row['id'] ?></td>
                 <td><?= $row['action'] ?></td>
                 <td><?= $row['avatar'] ?></td>
-                <td><?= $row['nama'] ?></td>
+                <td><?= $row['name'] ?></td>
                 <td><?= $row['email'] ?></td>
                 <td><?= $row['phone'] ?></td>
                 <td><?= $row['role'] ?></td>
