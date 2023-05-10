@@ -1,9 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
@@ -33,7 +35,10 @@ while ($row = mysqli_fetch_assoc($result)) : //mysqli_fetch_assoc
     ?>
             <tr>
                 <td><?= $row['id'] ?></td>
-                <td><?= $row['action'] ?></td>
+                <td>
+                    <a href='edit.php?id=$row[id]'>Edit</a> |
+                    <a href='delete.php?id=$row[id]'>Delete</a>
+                </td>
                 <td><?= $row['avatar'] ?></td>
                 <td><?= $row['name'] ?></td>
                 <td><?= $row['email'] ?></td>
@@ -53,11 +58,5 @@ mysqli_close($conn);
 ?>
 
 </body>
-
-<script>
-    $(document).ready(function () {
-        $('#myTable').DataTable();
-    });
-</script>
 
 </html>

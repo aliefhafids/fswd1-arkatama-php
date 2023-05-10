@@ -3,15 +3,17 @@
 require_once 'koneksi.php';
 
 // Ambil data dari form
-$id = $_POST['id'];
-$avatar = $_POST['avatar'];
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$role = $_POST['role'];
+$name = $_REQUEST['name'];
+$avatar = $_REQUEST['avatar'];
+$email = $_REQUEST['email'];
+$password = $_REQUEST['password'];
+$phone = $_REQUEST['phone'];
+$role = $_REQUEST['role'];
+$address = $_REQUEST['address'];
 
 // Query untuk menambah data
-$query = "INSERT INTO users (id, avatar, name, email, phone, role) VALUES ('$id', '$avatar', '$name', '$email', '$phone', '$role')";
+$query = "INSERT INTO users (name, avatar, email, password, phone, role, address) 
+VALUES ('$name', '$avatar', '$email', '$password', '$phone', '$role', '$address')";
 
 // Eksekusi query
 if (mysqli_query($conn, $query)) {
