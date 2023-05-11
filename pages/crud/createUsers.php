@@ -17,7 +17,8 @@ VALUES ('$name', '$avatar', '$email', '$password', '$phone', '$role', '$address'
 
 // Eksekusi query
 if (mysqli_query($conn, $query)) {
-    echo 'Data berhasil ditambahkan';
+    $_session['message'] = 'Data berhasil ditambahkan';
+    header("Location: readUsers.php");
 } else {
     echo 'Error: ' . mysqli_error($conn);
 }
