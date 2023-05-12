@@ -10,8 +10,25 @@
 </head>
 
 <body>
-    
-<h1>Data Pengguna</h1>
+<?php
+
+session_start();
+if($_SESSION['email'] == null){
+    echo "
+    <script>
+      alert('Anda harus login terlebih dahulu!!');
+      document.location.href = '../../pages/login.php';
+    </script>
+  "; 
+}
+?>
+    <h1>Data Pengguna</h1>
+    <div class="input-group">
+        <button class="btn btn-danger ">
+            <a href="logout.php" class="text-light">Logout</a>
+        </button>
+    </div>
+
     <?php
 // Koneksi ke database
 require_once 'koneksi.php';
